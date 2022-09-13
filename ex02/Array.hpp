@@ -48,9 +48,9 @@ class Array
 			delete[] this->arr;
 		}
 
-		T	&operator[](unsigned int i) const
+		T	&operator[](int i) const
 		{
-			if (i >= this->arr_size)
+			if (i >= this->arr_size || i < 0)
 				throw SegFault();
 			return (this->arr[i]);
 		}

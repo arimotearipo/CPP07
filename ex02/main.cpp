@@ -35,7 +35,7 @@ int	main(void)
 	cout << "Printing the size..." << endl;
 	cout << GRN << test.size() << RESET << endl;
 	cout << "Trying to access bad memory..." << endl;
-	cout << test2[50] << endl;
+	cout << test2[-5] << endl;
 
 	// system("leaks array");
 	return (0);
