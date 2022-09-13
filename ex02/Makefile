@@ -8,13 +8,11 @@ OBJS = main.o
 
 HEADERS = Array.hpp
 
-TEMPLATE = Array.tpp
-
-NAME = iter
+NAME = array
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS) $(HEADERS) $(TEMPLATE)
+$(NAME):	$(OBJS) $(HEADERS)
 			$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean:		
