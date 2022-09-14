@@ -2,6 +2,7 @@
 #include "colours.h"
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 
 using std::cout;
 using std::string;

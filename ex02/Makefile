@@ -15,8 +15,12 @@ all:		$(NAME)
 $(NAME):	$(OBJS) $(HEADERS)
 			$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
+$(OBJS): 	$(MAIN) $(HEADERS)
+			$(CC) $(FLAGS) $(MAIN) $(HEADERS) -c
+
 clean:		
 			rm -rf $(OBJS)
+			rm -rf *gch
 
 fclean:		clean
 			rm -rf $(NAME)

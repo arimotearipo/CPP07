@@ -25,7 +25,7 @@ int	main(void)
 	Array<char> test2(50);
 
 	// 97 to 122
-	for (int i = 0; i < test2.size(); i++)
+	for (unsigned int i = 0; i < test2.size(); i++)
 	{
 		char c = 97 + (rand() % 26);
 		cout << "Filling in " << GRN << c << RESET << " at index " << i << endl;

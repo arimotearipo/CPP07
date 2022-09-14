@@ -2,6 +2,7 @@
 #define ARRAY_HPP
 
 #include <iostream>
+#include <cstdlib>
 #include <exception>
 #include "colours.h"
 
@@ -13,7 +14,7 @@ template<typename T>
 class Array
 {
 	public:
-		Array(void) : arr(nullptr), arr_size(0) {};
+		Array(void) : arr(NULL), arr_size(0) {};
 
 		Array(unsigned int n) : arr_size(n)
 		{
@@ -22,7 +23,7 @@ class Array
 
 		Array(Array &tocopy) : arr_size(tocopy.size())
 		{
-			if (this->arr != nullptr)
+			if (this->arr != NULL)
 				delete[] this->arr;
 			*this = tocopy;
 			this->arr = new T[tocopy.size()];
@@ -32,7 +33,7 @@ class Array
 
 		Array	&operator=(Array &toassign)
 		{
-			if (arr != nullptr)
+			if (arr != NULL)
 				delete[] this->arr;
 
 			*this = toassign;
@@ -48,9 +49,9 @@ class Array
 			delete[] this->arr;
 		}
 
-		T	&operator[](int i) const
+		T	&operator[](unsigned int i) const
 		{
-			if (i >= this->arr_size || i < 0)
+			if (i >= this->arr_size)
 				throw SegFault();
 			return (this->arr[i]);
 		}
@@ -78,7 +79,7 @@ template<typename T>
 ostream &operator<<(ostream &OS, Array<T> &ARRAY)
 {
 	OS << "Printing the content of the array..." << endl;
-	for (int i = 0; i < ARRAY.size(); i++)
+	for (unsigned int i = 0; i < ARRAY.size(); i++)
 		cout << GRN << ARRAY[i] << " " << RESET;
 	return (OS);
 }

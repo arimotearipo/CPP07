@@ -1,4 +1,5 @@
 *.o
+*.gch
 templates
 iter
 array
