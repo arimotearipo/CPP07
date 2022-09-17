@@ -76,12 +76,12 @@ class Array
 };
 
 template<typename T>
-ostream &operator<<(ostream &OS, Array<T> &ARRAY)
+ostream &operator<<(ostream &_os, Array<T> &_array)
 {
-	OS << "Printing the content of the array..." << endl;
-	for (unsigned int i = 0; i < ARRAY.size(); i++)
-		cout << GRN << ARRAY[i] << " " << RESET;
-	return (OS);
+	// OS << "Printing the content of the array..." << endl;
+	for (unsigned int i = 0; i < _array.size(); i++)
+		_os << GRN << _array[i] << " " << RESET;
+	return (_os);
 }
 
 #endif
