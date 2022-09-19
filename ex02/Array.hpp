@@ -21,32 +21,34 @@ class Array
 			this->arr = new T[n];
 		}
 
-		Array(Array &tocopy) : arr_size(tocopy.size())
-		{
-			if (this->arr != NULL)
-				delete[] this->arr;
-			*this = tocopy;
-			this->arr = new T[tocopy.size()];
-			for (int i = 0; i < this->arr_size; i++)
-				this->arr[i] = tocopy[i];
-		}
-
 		Array	&operator=(Array &toassign)
 		{
-			if (arr != NULL)
+			if (this->arr_size != 0)
 				delete[] this->arr;
-
-			*this = toassign;
 			this->arr = new T[toassign.size()];
-			for (int i = 0; i < this->arr_size; i++)
-				this->arr[i] = toassign[i];
 			this->arr_size = toassign.size();
+			for (unsigned int i = 0; i < this->arr_size; i++)
+				this->arr[i] = toassign[i];
 			return (*this);
+		}
+
+		Array(Array &tocopy)
+		{
+			if (this->arr_size != 0)
+				delete[] this->arr;
+			this->arr_size = tocopy.size();
+			this->arr = new T[this->arr_size];
+			for (unsigned int i = 0; i < this->arr_size; i++)
+				this->arr[i] = tocopy[i];
 		}
 
 		~Array(void)
 		{
-			delete[] this->arr;
+			if (this->arr != NULL)
+			{
+				delete[] this->arr;
+				this->arr = NULL;
+			}
 		}
 
 		T	&operator[](unsigned int i) const
