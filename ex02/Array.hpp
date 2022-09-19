@@ -51,7 +51,7 @@ class Array
 			}
 		}
 
-		T	&operator[](unsigned int i) const
+		T	&operator[](unsigned int i)
 		{
 			if (i >= this->arr_size)
 				throw SegFault();
