@@ -34,8 +34,6 @@ class Array
 
 		Array(Array &tocopy)
 		{
-			if (this->arr_size != 0)
-				delete[] this->arr;
 			this->arr_size = tocopy.size();
 			this->arr = new T[this->arr_size];
 			for (unsigned int i = 0; i < this->arr_size; i++)
