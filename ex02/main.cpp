@@ -46,10 +46,10 @@ int	main(int ac, char **av)
 	cout << endl;
 
 	int newvalue = atoi(av[3]);
-	cout << UWHT "Trying to change the value at index " << badindex << " to " << newvalue << RESET << endl;
+	cout << UWHT "Trying to change the value in int array at index " << badindex << " to " << newvalue << RESET << endl;
 	try
 	{
-		test[newvalue] = newvalue; // it should not be able to do this as the [] operator overloader is a const
+		test[badindex] = newvalue; // it should not be able to do this as the [] operator overloader is a const
 	}
 	catch (std::exception const &e)
 	{
@@ -74,16 +74,16 @@ int	main(int ac, char **av)
 	}
 	cout << endl;
 
-	cout << UWHT "Printing the content of the array..." RESET << endl;
-	cout << test << endl;
+	cout << UWHT "Printing the content of the char array..." RESET << endl;
+	cout << test2 << endl;
 	cout << endl;
 
 	cout << UWHT "Printing the size..." RESET << endl;
-	cout << GRN << test.size() << RESET << endl;
+	cout << GRN << test2.size() << RESET << endl;
 	cout << endl;
 
 	int	badindex2 = atoi(av[5]);
-	cout << UWHT "Trying to access memory at index " << badindex2 << RESET << endl;
+	cout << UWHT "Trying to access memory in char array at index " << badindex2 << RESET << endl;
 	try
 	{
 		cout << test2[badindex2] << endl;
@@ -95,10 +95,10 @@ int	main(int ac, char **av)
 	cout << endl;
 
 	char newvalue2 = av[6][0];
-	cout << UWHT "Trying to change the value at index " << badindex << " to " << newvalue2 << RESET << endl;
+	cout << UWHT "Trying to change the value at index " << badindex2 << " to " << newvalue2 << RESET << endl;
 	try
 	{
-		test2[newvalue] = newvalue2; // it should not be able to do this as the [] operator overloader is a const
+		test2[badindex2] = newvalue2; // it should not be able to do this as the [] operator overloader is a const
 	}
 	catch (std::exception const &e)
 	{
