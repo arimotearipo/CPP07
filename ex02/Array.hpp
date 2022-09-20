@@ -66,7 +66,7 @@ class Array
 			public:
 				virtual const char *what() const throw()
 				{
-					return ("Array::exception : segmentation fault muahahahaha feels good");
+					return ("Array::exception : Accessing bad memory location");
 				}
 		};
 
