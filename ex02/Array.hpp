@@ -55,6 +55,13 @@ class Array
 				throw SegFault();
 			return (this->arr[i]);
 		}
+
+		const T&	 operator[](unsigned int i) const
+		{
+			if (i >= this->arr_size)
+				throw SegFault();
+			return (this->arr[i]);
+		}
 	
 		unsigned int	size(void) const
 		{
@@ -75,8 +82,17 @@ class Array
 		unsigned int	arr_size;
 };
 
+// template<typename T>
+// ostream &operator<<(ostream &_os, Array<T> &_array)
+// {
+// 	// OS << "Printing the content of the array..." << endl;
+// 	for (unsigned int i = 0; i < _array.size(); i++)
+// 		_os << GRN << _array[i] << " " << RESET;
+// 	return (_os);
+// }
+
 template<typename T>
-ostream &operator<<(ostream &_os, Array<T> &_array)
+ostream &operator<<(ostream &_os, Array<T> const &_array)
 {
 	// OS << "Printing the content of the array..." << endl;
 	for (unsigned int i = 0; i < _array.size(); i++)
